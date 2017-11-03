@@ -1,7 +1,6 @@
 #include <malloc.h>
 #include <iostream>
 
-
 /**
  * 杭州电子科技大学数据结构851 2016年第一题
  * <p>
