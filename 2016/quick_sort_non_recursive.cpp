@@ -1,11 +1,7 @@
-//
-//
-//
 /**
  * Created by Harlan1994 on 2017/11/3.
  * 非递归编写快速排序
  */
-
 #include <iostream>
 
 int partition(int array[], int left, int right) {
@@ -54,7 +50,7 @@ int quick_sort_non_recursive(int array[], int left, int right) {
 
         while (top != -1) { // while stack is not empty
 
-//            std::cout << "top = " << top << std::endl;
+            // std::cout << "top = " << top << std::endl;
 
             Rec *rec1 = stack[top--]; // pop
             int partitial = partition(array, rec1->left, rec1->right);
