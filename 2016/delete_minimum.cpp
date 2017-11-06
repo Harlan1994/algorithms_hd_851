@@ -9,7 +9,7 @@
  */
 typedef int DataType;
 
-typedef struct Node {
+typedef struct {
     DataType value;
     struct Node *next;
 } Node, LinkedList;
@@ -36,7 +36,8 @@ DataType findMinimum(LinkedList *linkedList) {
     Node *p = linkedList->next; // 保存当前最小值，即第一个节点
     Node *q = linkedList; // 指向当前最小值的前驱
     while (p->next) {
-        if (p->next->value < q->next->value) { // 每次都和当前最小值比较，小于当前最小值则更新最小值节点的前驱
+        if (p->next->value < q->next->value) {
+            // 每次都和当前最小值比较，小于当前最小值则更新最小值节点的前驱
             q = p;
         }
         p = p->next;

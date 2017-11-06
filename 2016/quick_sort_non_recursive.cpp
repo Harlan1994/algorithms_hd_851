@@ -30,7 +30,7 @@ int quick_sort_recursive(int array[], int left, int right) {
     }
 }
 
-typedef struct rec {
+typedef struct {
     int left;
     int right;
 } Rec;
@@ -55,7 +55,7 @@ int quick_sort_non_recursive(int array[], int left, int right) {
             Rec *rec1 = stack[top--]; // pop
             int partitial = partition(array, rec1->left, rec1->right);
 
-            // if left part can be recursive
+            // if left part are recursive
             if (rec1->left < partitial - 1) {
                 Rec *rec2 = (Rec *) malloc(sizeof(rec));
                 rec2->left = left;
@@ -63,7 +63,7 @@ int quick_sort_non_recursive(int array[], int left, int right) {
                 stack[++top] = rec2; // push into stack
             }
 
-            // if right part can be recursive
+            // if right part are recursive
             if (rec1->right > partitial + 1) {
                 Rec *rec3 = (Rec *) malloc(sizeof(rec));
                 rec3->left = partitial + 1;
