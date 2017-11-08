@@ -1,6 +1,8 @@
 //
 // Created by Harlan on 2017/1/7.
 //
+
+// http://blog.csdn.net/zdp072/article/details/19755675
 #include <stack>
 #include <iostream>
 #include <cstdio>
