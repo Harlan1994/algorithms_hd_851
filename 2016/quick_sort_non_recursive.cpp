@@ -25,7 +25,7 @@ int quick_sort_recursive(int array[], int left, int right) {
     }
 }
 
-typedef struct rec{
+typedef struct rec {
     int left;
     int right;
 } Rec;
@@ -48,6 +48,7 @@ int quick_sort_non_recursive(int array[], int left, int right) {
             // std::cout << "top = " << top << std::endl;
 
             Rec *rec1 = stack[top--]; // pop
+
             int partitial = partition(array, rec1->left, rec1->right);
 
             // if left part are recursive
@@ -70,16 +71,22 @@ int quick_sort_non_recursive(int array[], int left, int right) {
 }
 
 int main() {
-    int array[] = {1, 3, 4, 6, 0, -8, 5, 2, 8, -2};
-    quick_sort_recursive(array, 0, 9);
+    int array1[] = {9, 8, 7, -6, 5, 4, 3, 2, 1, 0,
+                    10, 12, 234, 234, 234, 456, 5672, -1, -345, -3245345,
+                    -92340, -34, -99, 34, 324, 567, 347, 1234, -239, -9234};
+    quick_sort_recursive(array1, 0, 29);
     std::cout << "recursive:" << std::endl;
-    for (int i = 0; i < 10; i++) {
-        std::cout << array[i] << " ";
+    for (int i = 0; i < 29; i++) {
+        std::cout << array1[i] << " ";
     }
+
+    int array2[] = {9, 8, 7, -6, 5, 4, 3, 2, 1, 0,
+                    10, 12, 234, 234, 234, 456, 5672, -1, -345, -3245345,
+                    -92340, -34, -99, 34, 324, 567, 347, 1234, -239, -9234};
     std::cout << "\nnon-recursive:" << std::endl;
-    quick_sort_non_recursive(array, 0, 9);
-    for (int i = 0; i < 10; i++) {
-        std::cout << array[i] << " ";
+    quick_sort_non_recursive(array2, 0, 29);
+    for (int i = 0; i < 29; i++) {
+        std::cout << array2[i] << " ";
     }
     return 0;
 }
