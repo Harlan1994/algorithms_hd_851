@@ -54,7 +54,7 @@ int quick_sort_non_recursive(int array[], int left, int right) {
             // if left part are recursive
             if (rec1->left < partitial - 1) {
                 Rec *rec2 = (Rec *) malloc(sizeof(rec));
-                rec2->left = left;
+                rec2->left = rec1->left;
                 rec2->right = partitial - 1;
                 stack[++top] = rec2; // push into stack
             }
@@ -63,7 +63,7 @@ int quick_sort_non_recursive(int array[], int left, int right) {
             if (rec1->right > partitial + 1) {
                 Rec *rec3 = (Rec *) malloc(sizeof(rec));
                 rec3->left = partitial + 1;
-                rec3->right = right;
+                rec3->right = rec1->right;
                 stack[++top] = rec3; // push into stack
             }
         }
