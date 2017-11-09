@@ -13,11 +13,6 @@ int partition(int array[], int left, int right) {
         array[right] = array[left];
     }
     array[left] = pivotkey;
-
-    for (int i = 0; i < 10; i++) {
-        std::cout << array[i] << " ";
-    }
-    std::cout << std::endl;
     return left;
 }
 
@@ -30,7 +25,7 @@ int quick_sort_recursive(int array[], int left, int right) {
     }
 }
 
-typedef struct {
+typedef struct rec{
     int left;
     int right;
 } Rec;
